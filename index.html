@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Portal | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <button id="themeToggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <div class="logo-text"><h1>SMS Portal</h1><span>Govt. of Odisha</span></div>
+            </div>
+            <nav class="nav-links"><a href="index.html" class="active">Home</a><a href="#">Analytics</a><a href="#">Support</a></nav>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="badge gs-reveal">Governance Powered by AI</span>
+                <h2 class="gs-reveal">Track Education, Nutrition & Growth</h2>
+                <p class="gs-reveal">A real-time monitoring system for primary and secondary government schools across clinical and administrative metrics in Odisha.</p>
+                
+                <div class="search-modules gs-reveal-stagger">
+                    <div class="search-card">
+                        <div class="search-header"><i class="fas fa-school icon-box bg-blue"></i><h3>School Registry</h3></div>
+                        <div class="search-input-wrapper"><i class="fas fa-search"></i><input type="text" id="schoolSearch" placeholder="Find school..."><div id="schoolSuggestions" class="suggestions-dropdown"></div></div>
+                        <button id="viewSchoolBtn" class="btn btn-primary">Go to Dashboard <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                    <div class="search-card">
+                        <div class="search-header"><i class="fas fa-user-graduate icon-box bg-green"></i><h3>Student Profile</h3></div>
+                        <div class="search-input-wrapper"><i class="fas fa-search"></i><input type="text" id="studentSearch" placeholder="Find student..."><div id="studentSuggestions" class="suggestions-dropdown"></div></div>
+                        <button id="viewStudentBtn" class="btn btn-outline">View Portfolio <i class="fas fa-user"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual animate-float"><img src="https://api.dicebear.com/7.x/shapes/svg?seed=gov" class="main-visual"></div>
+        </div>
+    </section>
+    
+    <footer class="home-footer">
+        <p>© 2024 School Monitoring System | Department of School & Mass Education, Govt. of Odisha</p>
+    </footer>
+
+    <script src="js/data.js"></script><script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // GSAP Animations
+            gsap.from(".gs-reveal", {
+                y: 40,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+            gsap.from(".search-card", {
+                x: -30,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.2,
+                delay: 0.5,
+                ease: "back.out(1.7)"
+            });
+            gsap.from(".hero-visual", {
+                scale: 0.8,
+                opacity: 0,
+                duration: 1.5,
+                delay: 0.2,
+                ease: "expo.out"
+            });
+
+            // Search Logic
+            initSearchSuggestions('schoolSearch', 'schoolSuggestions', SCHOOLS_DATA, 'name', (item) => { window.location.href = `dashboard.html?id=${item.id}`; });
+            initSearchSuggestions('studentSearch', 'studentSuggestions', STUDENTS_DATA, 'name', (item) => { window.location.href = `profile.html?id=${item.id}`; });
+            document.getElementById('viewSchoolBtn').onclick = () => { const v = document.getElementById('schoolSearch').value; const m = SCHOOLS_DATA.find(s=>s.name===v); if(m) window.location.href=`dashboard.html?id=${m.id}`; };
+            document.getElementById('viewStudentBtn').onclick = () => { const v = document.getElementById('studentSearch').value; const m = STUDENTS_DATA.find(s=>s.name===v); if(m) window.location.href=`profile.html?id=${m.id}`; };
+        });
+    </script>
+</body>
+</html>
+

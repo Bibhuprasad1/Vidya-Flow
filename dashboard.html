@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard | SMS Portal</title>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Charts & Animations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-graduation-cap"></i>
+                <div class="logo-text">
+                    <span>SMS Portal</span>
+                    <small>Odisha State</small>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-section="overview"><i class="fas fa-th-large"></i> <span>Overview</span></a>
+                <a href="#" class="nav-item" data-section="attendance"><i class="fas fa-calendar-check"></i> <span>Attendance</span></a>
+                <a href="#" class="nav-item" data-section="teachers"><i class="fas fa-chalkboard-teacher"></i> <span>Faculty</span></a>
+                <a href="#" class="nav-item" data-section="students"><i class="fas fa-user-graduate"></i> <span>Students</span></a>
+                <a href="#" class="nav-item" data-section="meals"><i class="fas fa-utensils"></i> <span>Mid-Day Meal</span></a>
+                <a href="#" class="nav-item" data-section="sports"><i class="fas fa-running"></i> <span>Sports & PE</span></a>
+                <a href="#" class="nav-item" data-section="facilities"><i class="fas fa-building"></i> <span>Infrastructure</span></a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="index.html" class="nav-item"><i class="fas fa-home"></i> <span>Back to Home</span></a>
+                <div id="themeToggle" class="nav-item theme-switch"><i class="fas fa-moon"></i> <span>Dark Mode</span></div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="dashboard-top-bar">
+                <div class="breadcrumb">
+                    <span id="schoolNameDisplay">Unit-1 High School</span>
+                    <i class="fas fa-chevron-right"></i>
+                    <span id="activeSectionTitle" class="current">Overview</span>
+                </div>
+                <div class="top-bar-user">
+                    <div class="search-mini">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Global search...">
+                    </div>
+                </div>
+            </header>
+
+            <div id="contentArea" class="content-scroll">
+                <div class="pulse">Initializing Systems...</div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
+
