@@ -1,0 +1,98 @@
+/* Superior Governance Portal - Design System */
+
+:root {
+    /* Primary Colors - Refined Gov Blue Palette */
+    --primary-900: #020617;
+    --primary-800: #0f172a;
+    --primary-700: #1e293b;
+    --primary-600: #334155;
+    --primary-500: #475569;
+    
+    /* Brand Colors - Odisha Inspired Blues */
+    --accent-700: #1d4ed8;
+    --accent-600: #2563eb;
+    --accent-500: #3b82f6;
+    --accent-400: #60a5fa;
+    --accent-light: #eff6ff;
+    
+    /* Semantic Colors */
+    --success: #059669;
+    --success-light: #ecfdf5;
+    --warning: #d97706;
+    --warning-light: #fffbeb;
+    --danger: #dc2626;
+    --danger-light: #fef2f2;
+    
+    /* Backgrounds & Surfaces */
+    --bg-light: #f1f5f9;
+    --bg-white: rgba(255, 255, 255, 0.85);
+    --surface: #ffffff;
+    --border-light: rgba(226, 232, 240, 0.8);
+    
+    /* Typography */
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --text-white: #ffffff;
+    
+    /* Shadows - Layered Elevation */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    --shadow-lg: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    --shadow-accent: 0 10px 15px -3px rgba(37, 99, 235, 0.25);
+    
+    /* Glassmorphism Specs */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-blur: 16px;
+    
+    /* Radius Tokens */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 32px;
+    
+    /* Transitions */
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-pop: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Dark Mode Superior Theme */
+[data-theme="dark"] {
+    --bg-light: #020617;
+    --bg-white: rgba(15, 23, 42, 0.8);
+    --surface: #0f172a;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-light: rgba(30, 41, 59, 0.8);
+    --glass-bg: rgba(15, 23, 42, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.05);
+    --accent-light: rgba(37, 99, 235, 0.1);
+}
+
+/* Global Polish */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Glass Utility Classes */
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, var(--accent-600), var(--accent-400));
+}
+
+.gov-gradient {
+    background: linear-gradient(135deg, var(--primary-900), var(--accent-700));
+}

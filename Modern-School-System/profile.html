@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile | SMS Portal</title>
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Charts & Animations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+    <button id="themeToggle" class="theme-toggle-btn"><i class="fas fa-moon"></i></button>
+    
+    <div class="profile-page">
+        <!-- Navigation -->
+        <header class="profile-top-nav">
+            <div class="container">
+                <a href="index.html" class="back-link"><i class="fas fa-home"></i> Dashboard Home</a>
+                <a href="#" id="backToDash" class="back-link"><i class="fas fa-th-large"></i> School Analytics</a>
+            </div>
+        </header>
+
+        <main class="container">
+            <!-- Profile Record Card -->
+            <div class="profile-header card glass-effect gs-reveal">
+                <div class="profile-identity">
+                    <div class="avatar-wrapper">
+                        <img id="studentPhoto" src="" class="avatar">
+                        <div class="status-indicator online"></div>
+                    </div>
+                    <div class="identity-text">
+                        <h1 id="studentName">Loading Profile...</h1>
+                        <p id="studentSchoolMeta">Department of Education, Odisha</p>
+                        <div class="identity-badges">
+                            <span id="studentClass" class="badge badge-primary">Grade ...</span>
+                            <span id="studentPerf" class="badge badge-success">Excellent</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-quick-stats">
+                    <div class="q-stat">
+                        <label>Attendance</label>
+                        <div class="q-val" id="qAttend">0%</div>
+                    </div>
+                    <div class="q-stat">
+                        <label>Nutrition</label>
+                        <div class="q-val" id="qMeal">Optimized</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Metrics Grid -->
+            <div class="profile-grid">
+                <div class="grid-col-1">
+                    <div class="card glass-effect gs-card">
+                        <div class="card-title">Attendance Fidelity</div>
+                        <canvas id="attendanceChart"></canvas>
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Academic Year Coverage</span>
+                                <span id="attendPercentLabel">0%</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div id="attendProgressBar" class="progress-bar-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card glass-effect gs-card">
+                        <div class="card-title">Nutrition History</div>
+                        <div class="table-container">
+                            <table id="mealTable">
+                                <thead><tr><th>Timeline</th><th>Asset Consumption</th></tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-col-2">
+                    <div class="card glass-effect gs-card">
+                        <div class="card-title">Academic Performance Graph</div>
+                        <canvas id="marksChart" height="250"></canvas>
+                        <div class="table-container" style="margin-top: 1.5rem;">
+                            <table id="marksTable">
+                                <thead><tr><th>Subject</th><th>Competency</th><th>Proficiency</th></tr></thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="card glass-effect gs-card">
+                        <div class="card-title">Extracurricular Development</div>
+                        <div class="sports-info">
+                            <i class="fas fa-award trophy-icon"></i>
+                            <div class="sports-text">
+                                <h4 id="sportName">Loading...</h4>
+                                <p id="sportAchievement">District Representative</p>
+                                <span id="sportLevel" class="badge badge-primary">State Level</span>
+                            </div>
+                        </div>
+                        <div class="hobbies-section">
+                            <label>Social Skills & Interests</label>
+                            <div id="hobbiesTags" class="tags-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Logic -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>
+
